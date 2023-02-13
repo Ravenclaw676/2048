@@ -2,6 +2,7 @@
 
 from random import randint, choice
 
+
 class Board():
     """a class that is the game board"""
     def __init__(self):
@@ -53,6 +54,7 @@ class Board():
 
     def merge_block(self, stationary_x, stationary_y, moving_x, moving_y):
         """It merges 2 adjacent blocks"""
-        if self.grid[stationary_y][stationary_x] == self.grid[moving_y][moving_x]:
-            self.grid[stationary_y][stationary_x] = self.grid[stationary_x][stationary_y] * 2
+        location = self.grid[stationary_y][stationary_x]
+        if location == self.grid[moving_y][moving_x]:
+            location *= 2
             self.grid[moving_y][moving_x] = 0
